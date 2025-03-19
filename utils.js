@@ -75,6 +75,15 @@ const findNoteIndex = function (notebook, noteId) {
   return notebook.notes.findIndex((note) => note.id === noteId);
 };
 
+function updateYear() {
+  const currentYear = new Date().getFullYear();
+  const yearElement = document.getElementById('year');
+  yearElement.dateTime = currentYear;
+  yearElement.textContent = currentYear;
+}
+
+updateYear();
+
 export {
   activeNotebook,
   addEventOnElements,
@@ -85,6 +94,7 @@ export {
   generateID,
   getGreetingMsg,
   getRelativeTime,
-  makeElemEditable
+  makeElemEditable,
+  updateYear
 };
 

@@ -1,6 +1,12 @@
 'use strict';
 
-import { findNote, findNotebook, findNotebookIndex, findNoteIndex, generateID } from './utils.js';
+import {
+  findNote,
+  findNotebook,
+  findNotebookIndex,
+  findNoteIndex,
+  generateID,
+} from './utils.js';
 
 let notekeeperDB = {};
 
@@ -51,14 +57,14 @@ export const db = {
         id: generateID(),
         notebookID,
         ...object,
-        postedOn: new Date().getTime()
-      }
+        postedOn: new Date().getTime(),
+      };
 
       notebook.notes.unshift(noteData);
       writeDB();
 
       return noteData;
-    }
+    },
   },
 
   get: {
@@ -73,7 +79,7 @@ export const db = {
 
       const notebook = findNotebook(notekeeperDB, notebookID);
       return notebook.notes;
-    } 
+    },
   },
 
   update: {
@@ -97,7 +103,7 @@ export const db = {
       writeDB();
 
       return newNote;
-    }
+    },
   },
 
   // delete: {
@@ -143,6 +149,6 @@ export const db = {
           return notebook.notes;
         }
       }
-    }
-  }
+    },
+  },
 };

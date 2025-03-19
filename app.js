@@ -89,14 +89,15 @@ addEventOnElements($noteCreateBtns, 'click', function () {
   });
 });
 
-const renderExistedNote = function() {
-  const activeNotebookId = document.querySelector('[data-notebook].active')?.dataset.notebook;
+const renderExistedNote = function () {
+  const activeNotebookId = document.querySelector('[data-notebook].active')?.dataset
+    .notebook;
 
-  if(activeNotebookId) {
+  if (activeNotebookId) {
     const noteList = db.get.note(activeNotebookId);
-    
+
     client.note.read(noteList);
   }
-}
+};
 
 renderExistedNote();

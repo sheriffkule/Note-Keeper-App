@@ -16,11 +16,11 @@ const emptyNotesTemplate = `
   </div>
 `;
 
-const disableNoteCreateBtns = function(isThereAnyNotebooks) {
-  $noteCreateBtns.forEach($item => {
-    $item[isThereAnyNotebooks ? 'removeAttribute' : 'setAttribute']('disabled', '')
-  })
-}
+const disableNoteCreateBtns = function (isThereAnyNotebooks) {
+  $noteCreateBtns.forEach(($item) => {
+    $item[isThereAnyNotebooks ? 'removeAttribute' : 'setAttribute']('disabled', '');
+  });
+};
 
 export const client = {
   notebook: {
@@ -104,6 +104,6 @@ export const client = {
     delete(noteId, isNoteExists) {
       document.querySelector(`[data-note="${noteId}"]`).remove();
       if (!isNoteExists) $notePanel.innerHTML = emptyNotesTemplate;
-    }
+    },
   },
 };
